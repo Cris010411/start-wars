@@ -28,6 +28,7 @@ export const Home = () => {
 										title={items.name}
 										url={items.url}
 										uid={items.uid}
+										index={i + 1}
 										//gender={store.people1.gender}
 										//hair={store.people1.hair_color}
 										//eye={store.people1.eye_color}

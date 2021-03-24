@@ -7,6 +7,12 @@ import { Context } from "../store/appContext";
 
 export const Card = props => {
 	const { store, actions } = useContext(Context);
+	let item = props.index;
+
+	useEffect(() => {
+		actions.getInfPeoples(item);
+	}, []);
+
 	return (
 		<div>
 			<div
@@ -17,11 +23,12 @@ export const Card = props => {
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text margen">
 						Gender:
-						{props.gender}
+						{store.detalle.gender}
 						<br />
 						Hair color:
+						{store.detalle.hair}
 						<br />
-						Hair color: {props.eye}
+						Hair color: {store.detalle.eye_color}
 						<br />
 					</p>
 
@@ -51,5 +58,6 @@ Card.propTypes = {
 	hair: PropTypes.string,
 	eye: PropTypes.string,
 	uid: PropTypes.string,
-	url: PropTypes.string
+	url: PropTypes.string,
+	index: PropTypes.number
 };

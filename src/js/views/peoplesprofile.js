@@ -9,10 +9,6 @@ export const Peoplesprofile = props => {
 	const params = useParams();
 	let dato = [];
 
-	useEffect(() => {
-		actions.getInfPeoples(params.theid);
-	}, []);
-
 	//console.log(store.detalle);
 	//let peg = store.detalle.name;
 	//let patron = / /g,
