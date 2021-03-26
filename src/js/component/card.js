@@ -23,16 +23,16 @@ export const Card = props => {
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text margen">
 						Gender:
-						{store.detalle.gender}
+						{props.gender}
 						<br />
 						Hair color:
-						{store.detalle.hair}
+						{props.hair}
 						<br />
-						Hair color: {store.detalle.eye_color}
+						Hair color: {props.eye}
 						<br />
 					</p>
 
-					<Link to={"/peoplesprofile/" + props.uid}>
+					<Link to={"/peoplesprofile/" + props.index}>
 						<button
 							className="btn btn-primary pos1"
 							style={{ color: "rgb(121, 104, 9)", backgroundColor: "white", border: "none" }}>

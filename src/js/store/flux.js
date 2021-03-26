@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanets: async () => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/planets/")
+				fetch("https://swapi.dev/api/planets/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ planets: data.results });
@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPeoples: async () => {
 				const store = getStore();
-				fetch("https://www.swapi.tech/api/people/")
+				fetch("https://swapi.dev/api/people/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ peoples: data.results });
@@ -44,9 +44,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			getInfPeoples: async id => {
+			getInfPeoples: id => {
 				const store = getStore();
-
+				console.log(id);
 				fetch("https://www.swapi.tech/api/people/" + id)
 					.then(response => response.json())
 					.then(data => {
@@ -120,6 +120,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			}
+			/*loadPeople: () => {
+				fetch("https://www.swapi.tech/api/people/")
+					.then(res => res.json())
+					.then(data => {
+						let personas = getStore().people;
+						for (let i = 0; i < data.results.length; i++) {
+							fetch(data.results[i].url)
+								.then(res => res.json())
+								.then(dataProp => {
+									//console.log(dataProp.result.properties);
+									//personas.push(dataProp.result.properties);
+									//setStore({ people: [...personas] });
+								//})
+								//.catch(err => console.error(err));
+						//}
+					//})
+					.catch(err => console.error(err));
+			}*/
 		}
 	};
 };

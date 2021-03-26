@@ -26,12 +26,12 @@ export const Home = () => {
 								<div key={i} style={{ marginRight: "10px" }}>
 									<Card
 										title={items.name}
-										url={items.url}
-										uid={items.uid}
+										//url={items.url}
+										//uid={items.uid}
 										index={i + 1}
-										//gender={store.people1.gender}
-										//hair={store.people1.hair_color}
-										//eye={store.people1.eye_color}
+										gender={items.gender}
+										hair={items.hair_color}
+										eye={items.eye_color}
 										//	gender={store.inf.gender}
 									/>
 								</div>
